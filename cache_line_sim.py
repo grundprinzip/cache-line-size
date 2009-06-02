@@ -139,11 +139,15 @@ def simulate_eviction(rows, cols, address_mapper, width=4):
                 cache_lines[cache_line_number] = load(address, CACHE_LINE_SIZE)
 
     #print cache_lines
-    print "(%d, %d, %d)" % (hit, miss, evict)
+    #print "(%d, %d, %d)" % (hit, miss, evict)
+    return (hit, miss, evict)
 
 if __name__ == "__main__":
     # Simulate the eviction with 10000 rows, 20 columns
     # and the column address strategy
-    simulate_eviction(10000, 20, col_address_for)
+    rows = 10000
+    for x in range(1,40):
+        res = simulate_eviction(rows, x, col_address_for)
+        print x, float(res[2] / float(x))
 
 
