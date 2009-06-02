@@ -1,0 +1,13 @@
+# Cache Line Eviction Simulator
+
+This is a small programm that simulates the eviction of first level data cache
+line when accessing it in a specific way.
+
+The program uses the following constants:
+
+CACHE_LINE_SIZE = 64
+L1_SET_SIZE = 64
+L1_ASSOC = 8
+L1_SIZE = CACHE_LINE_SIZE * L1_SET_SIZE * L1_ASSOC
+
+These constants are take from our Intel Xeon 3.0GHz Blade
